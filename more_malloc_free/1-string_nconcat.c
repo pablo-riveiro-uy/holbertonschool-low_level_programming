@@ -1,12 +1,13 @@
 #include "main.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * str_nconcat - concat two strings in alloc mem
+ * string_nconcat - concat two strings in alloc mem
  *
- * Return: pointer with concat NULL for some is empty or failure
+ * Return: pointer with strings concatenated
  * @s1: first string
  * @s2: second string
+ * @n: bytes to inlcude of s2
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
@@ -28,7 +29,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (n <= len2)
 		len2 = n;
-	
 
 	concatString = malloc(sizeof(char) * len1 + len2 + 1);
 
