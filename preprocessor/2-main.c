@@ -3,9 +3,10 @@
 #include <string.h>
 
 /**
-  * printFileName - print file of original file.
+  * main - print file of original file.
   */
-void printFileName(void)
+void main(void)
 {
-	printf("$s\n", __FILE__);
+	printf("%s\n", __FILE__);
+	printf('\n')
 }
