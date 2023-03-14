@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 /**
-  * malloc_cheched - alloc mem.
-  * return@b: number of bytes to allocate
-  * Return - pointer allocated or exit 98 state on NULL
+  * malloc_checked - alloc mem.
+  * @b: number of bytes to allocate
+  * Return: pointer allocated or exit 98 state on NULL
   */
 void *malloc_checked(unsigned int b)
 {
