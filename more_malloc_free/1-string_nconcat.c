@@ -1,11 +1,10 @@
 #include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
- * str_concat - concat two strings in alloc mem
+ * str_nconcat - concat two strings in alloc mem
  *
- * Return: pointer with concat NULLfor some is empty or failure
+ * Return: pointer with concat NULL for some is empty or failure
  * @s1: first string
  * @s2: second string
  */
