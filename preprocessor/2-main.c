@@ -5,8 +5,9 @@
 /**
   * main - print file of original file.
   */
-void main(void)
+int main(void)
 {
 	printf("%s\n", __FILE__);
 	printf("\n");
+	return(0);
 }
