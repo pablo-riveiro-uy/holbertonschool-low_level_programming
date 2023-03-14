@@ -2,11 +2,20 @@
 #include <stdlib.h>
 
 /**
- * str_concat - concat two strings in alloc mem
+ * free_grid - free the mem of a 2 dimentional array
  *
- * Return: pointer with concat NULLfor some is empty or failure
- * @s1: first string
- * @s2: second string
+ * @grid: grid pointer
+ * @height: height of the matrix
+ *
  */
 
 void free_grid(int **grid, int height)
+{
+	int i;
+
+	for (i = 0; i < height; i++)
+		free(grid[i]);
+	
+	free(grid);
+}
+
