@@ -24,8 +24,11 @@ int *array_range(int min, int max)
 	arr = malloc(sizeof(int) * count);
 
 	if (!arr)
+	{
 		free(arr);
 		return (NULL);
+	}
+
 
 	for (i = 0; i < count; i++)
 	{
