@@ -14,21 +14,16 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *nameCopy;
 	char *ownerCopy;
 
-	if (new_dog == NULL)
+	struct new_dog my_dog;
+	my_dog Dog_2;
+	nameCopy = malloc(sizeof(name));
+	ownerCopy = malloc(sizeof(owner));
+	if (nameCopy == NULL)
 		return(NULL)
-	else
-	{
-		struct new_dog my_dog;
-		my_dog Dog_2;
-		nameCopy = malloc(sizeof(name));
-		ownerCopy = malloc(sizeof(owner));
-		if (nameCopy == NULL)
-			return(NULL)
-		if (ownerCopy == NULL)
-			return(NULL);
-		nameCopy->name;
-		ownerCopy->owner;
-	}
+	if (ownerCopy == NULL)
+		return(NULL);
+	nameCopy->name;
+	ownerCopy->owner;
 	return(0);
 }
 
