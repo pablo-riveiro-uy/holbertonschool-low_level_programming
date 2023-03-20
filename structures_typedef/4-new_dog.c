@@ -9,7 +9,7 @@
  @owner: strign to a ownwer name
  * Return: Always 0.
  */
-int dog_t *new_dog(char *name, float age, char *owner)
+dog_t *new_dog(char *name, float age, char *owner)
 {
 	char *nameCopy;
 	char *ownerCopy;
