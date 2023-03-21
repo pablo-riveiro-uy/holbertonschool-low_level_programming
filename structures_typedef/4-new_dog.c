@@ -10,22 +10,22 @@
 char *_strCharge(char *str)
 {
 	char *ptr;
-	unsigned int i;
-	int len;
+	unsigned int i = 0;
+	int len = 0;
 
 	if (str == NULL)
 		return (NULL);
 
 	for (i = 0; str[i] != '\0'; i++)
 		len++;
-
-	
-	ptr = malloc(len * sizeof(char));
+	ptr = malloc(len * sizeof(char) + 1);
 	if (ptr == NULL)
 		return (NULL);
 
 	for (i = 0; str[i] != '\0'; i++)
+	{
 		ptr[i] = str[i];
+	}
 	return (ptr);
 
 }
