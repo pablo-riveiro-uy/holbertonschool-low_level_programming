@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include "function_pointers.h"
+
+/**
+ * array_iterator - executes a function in each element of an array
+ * @name: name of the person
+ * @array: the array to itetate
+ * @size: len of the array
+ * @action: function to execute
+ *
+ */
+void array_iterator(int *array, size_t size, void (*action)(int))
+{
+	size_t i = 0;
+
+	for (; i <= size; i++)
+	{
+		action(array[i]);
+	}
+}
