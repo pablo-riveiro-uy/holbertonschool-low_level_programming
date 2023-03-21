@@ -2,7 +2,7 @@
 #include "function_pointers.h"
 
 /**
- * print_namee - print a char en execute a function
+ * print_name - print a char en execute a function
  * @name: name of the person
  * @f: a void function
  *
