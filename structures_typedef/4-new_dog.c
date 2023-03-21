@@ -19,7 +19,7 @@ char *_strCharge(char *str)
 	for (i = 0; str[i] != '\0'; i++)
 		len++;
 
-	len += 1;
+	
 	ptr = malloc(len * sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
@@ -30,10 +30,10 @@ char *_strCharge(char *str)
 
 }
 /**
- * dog_t - an instance of other dog
- *@name: string
+ * new_dog - an instance of other dog
+ * @name: string
  * @age: float to age
- *@owner: strign to a ownwer name
+ * @owner: strign to a ownwer name
  * Return: Always 0.
  */
 
