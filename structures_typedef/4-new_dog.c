@@ -26,6 +26,7 @@ char *_strCharge(char *str)
 	{
 		ptr[i] = str[i];
 	}
+	ptr[i] = '\0';
 	return (ptr);
 
 }
