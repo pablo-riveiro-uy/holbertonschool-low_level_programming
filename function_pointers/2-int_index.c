@@ -6,7 +6,7 @@
  * @array: array of int
  * @size: len of array
  * @cmp: function to execute
- *
+ * Return: -1 for NULL or fail and i when find
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
