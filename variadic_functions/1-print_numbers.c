@@ -2,7 +2,7 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 /**
- * Print_numbers - print n numbers with separator character
+ * print_numbers - print n numbers with separator character
  * @n: n fot n numbers to print
  * @separator: separation character
  * Return: list of numbers or NULL if no separator
