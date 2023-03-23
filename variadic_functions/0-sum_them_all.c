@@ -3,6 +3,7 @@
 #include <stdarg.h>
 /**
  * sum_them_all - take n values en make a sum
+ * @n: how many args going to be sums
  *  Return: sum of n values or 0 if 0 n
  */
 int sum_them_all(const unsigned int n, ...)
