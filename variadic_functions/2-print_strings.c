@@ -2,7 +2,7 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 /**
- * sum_strings - print n strings
+ * print_srings - print n strings
  * @n: n args to be printed
  * @separator: char to separate
  */
@@ -20,14 +20,14 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		str = va_arg(args, char *);
 
 		if (str == NULL)
-			printf("nill");
+			printf("(nill)");
 		else
 			printf("%s", str);
 
 		if (separator != NULL && i != n - 1)
 			printf("%s", separator);
 	}
-	printf ("\n");
+	printf("\n");
 	va_end(args);
 
 }
