@@ -26,7 +26,7 @@ int op_sub(int a, int b)
 }
 
 /**
- * op_sub: - multiplicate two ints
+ * op_mul: - multiplicate two ints
  * @a: int
  * @b: int
  * Return: int
