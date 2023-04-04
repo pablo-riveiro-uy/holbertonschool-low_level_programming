@@ -23,8 +23,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 			*head = new_element;
 			return (*head);
 		}
-
-		if (*head)
+		else
 		{
 			aux = *head;
 			while (aux && aux->next)
@@ -33,9 +32,5 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 			aux->next = new_element;
 			return (aux);
 		}
-		else
-			return (NULL);
-
-
 	return (NULL);
 }
