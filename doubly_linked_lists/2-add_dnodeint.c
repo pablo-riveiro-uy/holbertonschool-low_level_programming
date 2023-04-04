@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * dlistint_t - add a new element to a double lnked list
+ * add_dnodeint - add a new element to a double lnked list
  * @head: structur data head
  * @n: int to save as an element
  * Return: number of nodes of list given
