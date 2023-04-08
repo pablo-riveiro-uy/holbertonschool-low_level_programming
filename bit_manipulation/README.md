@@ -32,7 +32,7 @@ if ((n & (1 << index)) == 0)
 	*n &= ~(1 << index);
 `
 # 5
-### Here bits save all the diference between n and m by putting in n the bits are not in m.
+### Here xor var save all the diference between n and m by putting in n the bits are not in m.
 `
 	unsigned long int xor = n ^ m, bits_n = 0;
 `
