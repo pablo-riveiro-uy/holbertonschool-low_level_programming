@@ -3,43 +3,41 @@
 
 /**
  * create_file - ceates a file.
- * @ilename: string with file name.
- * @ext_content: string with content
+ * @filename: string with file name.
+ * @text_content: string with content
  *
  * Return: 1 on success -1 on fail.
  */
 
 int create_file(const char *filename, char *text_content)
-{	
-	char *buf = NULL;
-	int len = 0;	
+{
+	int len = 0;
 	ssize_t file, output;
 
 	if (!filename || !text_content)
 		return (-1);
-	
-	while(text_content[len])
+	if (text_content == NULL)
+		return (-1);
+	if (text_content != NULL)
+	{
+
+	while (text_content[len])
 		len++;
+	}
 
 	if (len == 0 || !len)
 		return (-1);
-	
-	buf = malloc(sizeof(char) * len);
-	if (!buf)
-		return (-1);
+
 
 	file = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	if (file == -1)
-	{
-		free(buf);
-		return (-1);
-	}
-
-	output = write(file, buf, *text_content);
-	if (!output)
 		return (-1);
 
-	free(buf);
+	output = write(file, text_content, len);
+	if (output == -1)
+		return (-1);
+	if (file == -1 || output == -1)
+		return (-1);
 
 	close(file);
 
