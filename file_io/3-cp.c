@@ -30,17 +30,17 @@ int main(int ac, char *av[])
 	fd = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 664);
 
 	if (fd == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write ot file %s\n", av[2]), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't write ot file %ld\n", fd), exit(99);
 
 	cp = write(fd, buff, foLen);
 
 	if (cp < fo)
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't write to file %ld\n", fd), exit(99);
 	if (cp == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't write to file %ld\n", fd), exit(99);
 	if (close(fo) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", av[1]), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", fo), exit(100);
 	if (close(fd) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", av[2]), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", fd), exit(100);
 	return (0);
 }
