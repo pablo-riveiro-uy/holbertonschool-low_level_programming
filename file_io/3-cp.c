@@ -11,28 +11,29 @@ int main(int ac, char *av[])
 {
 	char *buff[1024];
 	ssize_t fo, foLen, fd, cp;
-	int len1 = 0;
 
 	if (ac < 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 
-	while (av[1][len1])
-		len1++;
 
 	fo = open(av[1], O_RDONLY);
 
 	if (fo == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
 
-	foLen = read(fo, buff, 1024);
+	foLen = read(fo, buff,1024);
 
 	if (foLen == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
 
 	fd = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 664);
 
-	cp = write(fd, buff, foLen);
+	if (fd == -1)
+		dprintf(STDERR_FILENO, "Error: Can't write ot file %s\n", av[2]), exit(99);
 
+	cp = write(fd, buff, foLen);
+	if (cp < fo)
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 	if (cp == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write ot file %s\n", av[2]), exit(99);
 	if (close(fo) == -1)
