@@ -11,23 +11,17 @@
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_node_t  *item = malloc(sizeof(hash_node_t));
 	hash_table_t  *Mytable = malloc(sizeof(hash_table_t));
 	unsigned int i;
 
 	if (size == 0)
 		return (NULL);
 
-
-	if (!item)
-		return (NULL);
 	if (!Mytable)
 		return (NULL);
 
-	item->key = NULL;
-	item->value = NULL;
 	Mytable->size = size;
-	Mytable->array = malloc(sizeof(item) * size);
+	Mytable->array = malloc(sizeof(hash_node_t *) * size);
 	if (Mytable->array == NULL)
 	{
 		free(Mytable);
