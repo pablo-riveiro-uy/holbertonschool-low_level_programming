@@ -17,14 +17,14 @@ int main(int ac, char *av[])
 
 	fo = open(av[1], O_RDONLY);
 
-	if (fo == -1 || fo == 0)
+	if (fo == -1 || fo == 0 || !fo)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
 
 	foLen = read(fo, buff,  1024);
 	if (fo > foLen)
 		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]), exit(99);
 
-	if (foLen == -1)
+	if (foLen == -1 || foLen == 0)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
 
 	fd = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 664);
