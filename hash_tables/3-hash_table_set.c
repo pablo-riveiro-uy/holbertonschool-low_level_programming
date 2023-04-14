@@ -9,14 +9,31 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *item;
+	hash_node_t *item, *currNode;
+	unsigned long int index;
 
-	if (*hey == "")
+	if (key == NULL || (strcmp(key, "") == 0))
 		return (0);
-	item = malloc(sizeof(hash_node_t))
-	item->key[key_index(key) = key];
-	item->value[key_index(key) = value];
-	*ht = item;
+
+	index = key_index((unsigned char *)key, ht->size);
+	currNode = ht->array[index];
+
+	if (currNode && strcmp(key, currNode->key) == 0)
+	{
+		free(currNode->value);
+		currNode->value = strdup(value);
+		return (1);
+	}
+
+	item = malloc(sizeof(hash_node_t));
+
+	if (item  == NULL)
+		return (0);
+
+	item->key = strdup(key);
+	item->value = strdup(value);
+	item->next = ht->array[index];
+	ht->array[index] = item;
 
 	return (1);
 }
