@@ -34,17 +34,24 @@ int binary_search(int *array, size_t size, int value)
 			if (low == high && high == value)
 			{
 				print_array_b(array, low, high);
-				return(low);
+				return (low);
 			}
 			if (low == high)
 			{
 				print_array_b(array, low, high);
-				return(-1);
+				return (-1);
 			}
 		}
 	}
 	return (-1);
 }
+
+/**
+ * print_array_b - prints an array since  low to high index
+ *@array: a whole array
+ *@low: low index
+ *@high: high index
+ */
 
 void print_array_b(int *array, int low, int high)
 {
@@ -58,3 +65,4 @@ void print_array_b(int *array, int low, int high)
 			}
 			putchar('\n');
 }
+
